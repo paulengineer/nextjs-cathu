@@ -1,0 +1,9 @@
+Set-Alias pni pnpm install
+Set-Alias pna "pnpm add"
+Set-Alias pnr "pnpm run"
+Set-Alias pnd "pnpm dev"
+Set-Alias pns "pnpm start"
+Set-Alias pnb "pnpm build"
+Set-Alias ga "git add ."
+Set-Alias gc "git commit -m"
+Set-Alias gp "git push"
