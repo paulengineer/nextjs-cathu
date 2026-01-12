@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { ArrowRight } from "@/components/icons";
-
-export default function AboutPage() {
   return (
     <div className="min-h-screen pt-24 pb-16 px-4">
       <div className="max-w-4xl mx-auto">
@@ -14,7 +12,7 @@ export default function AboutPage() {
             of creative expression.
           </p>
 
-          <div className="border-l-4 border-black dark:border-white pl-6 my-12">
+          <div className="border-l-4 border-pastel-mint pl-6 my-12 bg-gradient-mint p-6 rounded-lg">
             <p className="text-2xl font-medium italic">
               "Art washes away from the soul the dust of everyday life."
             </p>
@@ -30,32 +28,24 @@ export default function AboutPage() {
 
           <h2 className="text-3xl font-bold mt-12 mb-4">What Makes Us Different</h2>
           <ul className="space-y-4 text-gray-600 dark:text-gray-400">
-            <li className="flex gap-3">
-              <span className="text-black dark:text-white">•</span>
-              <span>Group-based healing in a supportive community</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-black dark:text-white">•</span>
-              <span>No artistic experience required</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-black dark:text-white">•</span>
-              <span>Integration of Irish mythology and cultural heritage</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-black dark:text-white">•</span>
-              <span>Professional art materials and guidance provided</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-black dark:text-white">•</span>
-              <span>Accessible, non-clinical environment</span>
-            </li>
+            {[
+              "Group-based healing in a supportive community",
+              "No artistic experience required",
+              "Integration of Irish mythology and cultural heritage",
+              "Professional art materials and guidance provided",
+              "Accessible, non-clinical environment"
+            ].map((item, idx) => (
+              <li key={idx} className="flex gap-3 group">
+                <span className="text-pastel-mint font-bold group-hover:scale-125 transition-transform">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
 
-          <div className="mt-16 pt-8 border-t border-black dark:border-white">
+          <div className="mt-16 pt-8 border-t-2 border-pastel-mint">
             <Link
               href="/sessions"
-              className="inline-flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-8 py-4 text-lg font-medium hover:opacity-80 transition-opacity"
+              className="inline-flex items-center gap-2 bg-gradient-mint text-black px-8 py-4 text-lg font-medium hover:shadow-glow-mint transition-all rounded-lg"
             >
               View Our Sessions
               <ArrowRight className="w-5 h-5" />

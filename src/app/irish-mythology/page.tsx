@@ -10,7 +10,7 @@ export default function IrishMythologyPage() {
         <div className="space-y-12">
           <div>
             <h2 className="text-3xl font-bold mb-6">The Power of Myth</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               Irish mythology offers rich narratives of transformation, resilience, 
               and the human experience. At Cothú Studio, we weave these ancient 
               stories into our creative practice, using them as prompts for personal 
@@ -22,17 +22,20 @@ export default function IrishMythologyPage() {
             {mythologicalThemes.map((theme, index) => (
               <div
                 key={index}
-                className="border-2 border-black dark:border-white p-6 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                className="border-2 border-pastel-blue p-6 hover:bg-gradient-blue dark:hover:bg-gradient-blue transition-all group relative overflow-hidden rounded-lg"
               >
-                <div className="text-4xl mb-4">{theme.symbol}</div>
-                <h3 className="text-2xl font-bold mb-3">{theme.title}</h3>
-                <p className="opacity-70 mb-4">{theme.description}</p>
-                <p className="text-sm italic opacity-60">{theme.connection}</p>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-blue rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10">
+                  <div className="text-4xl mb-4">{theme.symbol}</div>
+                  <h3 className="text-2xl font-bold mb-3">{theme.title}</h3>
+                  <p className="opacity-70 mb-4">{theme.description}</p>
+                  <p className="text-sm italic opacity-60">{theme.connection}</p>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="border-t-2 border-black dark:border-white pt-12">
+          <div className="border-t-2 border-pastel-blue pt-12">
             <h2 className="text-3xl font-bold mb-6">Guided Art Adventures</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
               Our Guided Art Adventures sessions take you on a creative journey 
@@ -41,20 +44,27 @@ export default function IrishMythologyPage() {
               meaningful artistic responses.
             </p>
             
-            <div className="bg-black dark:bg-white text-white dark:text-black p-8">
+            <div className="bg-gradient-blue text-black p-8 rounded-lg">
               <h3 className="text-2xl font-bold mb-4">Upcoming Themes</h3>
               <ul className="space-y-3 text-lg">
-                <li>• The Salmon of Knowledge: Wisdom and Learning</li>
-                <li>• The Children of Lir: Transformation and Resilience</li>
-                <li>• Brigid's Flame: Creativity and Healing</li>
-                <li>• The Táin: Courage and Self-Advocacy</li>
-                <li>• The Otherworld: Liminality and Change</li>
+                {[
+                  "The Salmon of Knowledge: Wisdom and Learning",
+                  "The Children of Lir: Transformation and Resilience",
+                  "Brigid's Flame: Creativity and Healing",
+                  "The Táin: Courage and Self-Advocacy",
+                  "The Otherworld: Liminality and Change"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex gap-3">
+                    <span className="text-black font-bold">✨</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
-          <div className="border-l-4 border-black dark:border-white pl-6 my-12">
-            <p className="text-2xl font-medium italic">
+          <div className="border-l-4 border-pastel-blue pl-6 my-12 bg-gradient-blue p-6 rounded-lg">
+            <p className="text-2xl font-medium italic text-black">
               "In the old stories, we find mirrors for our own journeys — 
               tales of struggle, transformation, and ultimately, healing."
             </p>

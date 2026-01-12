@@ -22,4 +22,74 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Pastel accent utilities */
+  .accent-pink-light {
+    @apply bg-gradient-pink;
+  }
+
+  .accent-blue-light {
+    @apply bg-gradient-blue;
+  }
+
+  .accent-mint-light {
+    @apply bg-gradient-mint;
+  }
+
+  /* Border accents with pastel colors */
+  .border-pink-accent {
+    @apply border-pastel-pink dark:border-pastel-pink;
+  }
+
+  .border-blue-accent {
+    @apply border-pastel-blue dark:border-pastel-blue;
+  }
+
+  .border-mint-accent {
+    @apply border-pastel-mint dark:border-pastel-mint;
+  }
+
+  /* Hover effects with pastel glow */
+  .hover-glow-pink {
+    @apply hover:shadow-glow-pink transition-shadow duration-300;
+  }
+
+  .hover-glow-blue {
+    @apply hover:shadow-glow-blue transition-shadow duration-300;
+  }
+
+  .hover-glow-mint {
+    @apply hover:shadow-glow-mint transition-shadow duration-300;
+  }
+
+  /* Gradient text for headers */
+  .text-gradient-pink {
+    @apply bg-gradient-to-r from-pastel-pink to-pastel-pink bg-clip-text text-transparent;
+  }
+
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-pastel-blue to-pastel-blue bg-clip-text text-transparent;
+  }
+
+  .text-gradient-mint {
+    @apply bg-gradient-to-r from-pastel-mint to-pastel-mint bg-clip-text text-transparent;
+  }
+
+  /* Underline accents */
+  .underline-pink {
+    @apply relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-pastel-pink after:rounded-full;
+  }
+
+  .underline-blue {
+    @apply relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-pastel-blue after:rounded-full;
+  }
+
+  .underline-mint {
+    @apply relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-pastel-mint after:rounded-full;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
 }

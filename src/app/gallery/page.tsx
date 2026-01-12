@@ -11,9 +11,9 @@ export default function GalleryPage() {
           {Array.from({ length: 12 }).map((_, i) => (
             <div
               key={i}
-              className="aspect-square border-2 border-black dark:border-white flex items-center justify-center text-gray-400 dark:text-gray-600 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+              className="aspect-square border-2 border-pastel-mint flex items-center justify-center text-gray-400 dark:text-gray-600 hover:bg-gradient-mint hover:text-black dark:hover:bg-gradient-mint dark:hover:text-black transition-all group hover:shadow-glow-mint rounded-lg cursor-pointer"
             >
-              <div className="text-center">
+              <div className="text-center group-hover:scale-110 transition-transform">
                 <div className="text-4xl mb-2">🎨</div>
                 <p className="text-sm">Artwork {i + 1}</p>
               </div>
@@ -21,14 +21,14 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        <div className="mt-16 p-8 border-2 border-black dark:border-white">
-          <h2 className="text-3xl font-bold mb-4">About Our Gallery</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+        <div className="mt-16 p-8 border-2 border-pastel-mint bg-gradient-mint rounded-lg">
+          <h2 className="text-3xl font-bold mb-4 text-black">About Our Gallery</h2>
+          <p className="text-lg text-black mb-6">
             Our gallery showcases the creative expressions of our community members. 
             Each piece represents a personal journey of healing, exploration, and growth 
             through art therapy.
           </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-lg text-black">
             Participation in the gallery is always optional and decided by each individual 
             artist. We respect the personal nature of therapeutic art and celebrate those 
             who choose to share their work.
