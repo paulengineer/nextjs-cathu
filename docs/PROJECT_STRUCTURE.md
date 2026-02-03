@@ -95,7 +95,7 @@ const eventTypes = {
 Find and update:
 - Email: `hello@cothustudio.ie`
 - Phone: (add if needed)
-- Location: `Galway, Ireland`
+- Location: `Waterford, Ireland`
 - Opening hours (if different)
 
 ### 3️⃣ Replace Images

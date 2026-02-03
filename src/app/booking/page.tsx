@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import { ArtTherapyBooking } from "@/components/art-therapy-booking";
+import ArtTherapyBooking from "@/components/art-therapy-booking";
 
 export default function BookingPage() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4">
+    <div className="min-h-screen pt-24 pb-16 px-4 bg-cream">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-pastel-pink to-pastel-blue bg-clip-text text-transparent">
@@ -75,7 +75,7 @@ export default function BookingPage() {
             <div className="border-l-4 border-pastel-blue pl-6">
               <h3 className="font-bold text-lg mb-2">Visit Us</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Galway, Ireland<br />
+                Waterford, Ireland<br />
                 <span className="text-sm">Available by appointment</span>
               </p>
             </div>
@@ -84,7 +84,7 @@ export default function BookingPage() {
 
         <div className="mt-12 p-6 bg-gradient-pink rounded-lg border border-pastel-pink text-black">
           <p className="italic text-center">
-            "Art is the most honest form of self-expression. We're honored to be part of your journey."
+            &quot;Art is the most honest form of self-expression. We&apos;re honored to be part of your journey.&quot;
           </p>
         </div>
       </div>

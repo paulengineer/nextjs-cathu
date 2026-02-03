@@ -1,6 +1,6 @@
 export default function GalleryPage() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4">
+    <div className="min-h-screen pt-24 pb-16 px-4 bg-cream">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold mb-4">Gallery</h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 mb-16">

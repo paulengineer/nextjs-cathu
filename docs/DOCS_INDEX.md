@@ -247,4 +247,4 @@ You're done when:
 
 ---
 
-*Built for Cothú Studio - Art Therapy in Galway, Ireland*
+*Built for Cothú Studio - Art Therapy in Waterford, Ireland*

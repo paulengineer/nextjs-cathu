@@ -1,73 +1,84 @@
 import Link from "next/link";
+import { ArrowRight } from "@/components/icons";
 
 export default function SessionsPage() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4">
+    <div className="min-h-screen pt-24 pb-16 px-4 bg-cream">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">Group Sessions</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-16">
-          Join our community art therapy sessions
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-navy">Programs</h1>
+        <p className="text-xl text-navy opacity-80 mb-16">
+          Creative sessions designed to nourish and support your wellbeing
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {sessions.map((session, index) => (
+          {programs.map((program, index) => (
             <div
               key={index}
-              className="border-2 border-black dark:border-white p-8 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all group relative overflow-hidden"
+              className="border-2 border-navy p-8 bg-white hover:bg-navy hover:text-cream transition-all group"
             >
-              {/* Baby blue gradient accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-blue rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-4">{session.title}</h3>
-                <p className="text-lg mb-6 opacity-70">{session.description}</p>
-                
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between">
-                    <span className="font-medium">Duration:</span>
-                    <span className="opacity-70">{session.duration}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-medium">Group Size:</span>
-                    <span className="opacity-70">{session.groupSize}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-medium">Price:</span>
-                    <span className="font-bold">{session.price}</span>
-                  </div>
-                </div>
-
-                <Link
-                  href="/booking"
-                  className="inline-block w-full text-center py-3 border-2 border-current font-medium hover:bg-gradient-blue hover:text-black dark:group-hover:bg-gradient-blue dark:group-hover:text-black transition-all rounded"
-                >
-                  Book This Session
-                </Link>
+              <div className="mb-6">
+                <h3 className="text-3xl font-bold mb-4">{program.title}</h3>
+                <p className="text-lg mb-4">{program.subtitle}</p>
+                <p className="text-base opacity-70 leading-relaxed">{program.description}</p>
               </div>
+
+              <Link
+                href="/booking"
+                className="inline-flex items-center gap-2 border-b-2 border-current pb-1 hover:opacity-70 transition-opacity"
+              >
+                Learn more
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 p-8 border-2 border-pastel-blue bg-gradient-blue rounded-lg">
-          <h2 className="text-3xl font-bold mb-4 text-black">Session Packages</h2>
-          <p className="text-lg text-black mb-6 font-semibold">
-            Save when you book multiple sessions
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 bg-gradient-to-br from-pastel-blue to-blue-100 text-black rounded-lg hover:shadow-glow-blue transition-shadow">
-              <h3 className="text-2xl font-bold mb-2">4 Sessions</h3>
-              <p className="text-3xl font-bold mb-2">€140</p>
-              <p className="opacity-70">Save €20</p>
+        <div className="mt-16 p-8 bg-navy text-cream rounded-lg">
+          <h2 className="text-3xl font-bold mb-4">Session Information</h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div>
+              <h3 className="font-bold mb-2">Duration</h3>
+              <p className="opacity-90">90 - 120 minutes per session</p>
             </div>
-            <div className="p-6 bg-gradient-to-br from-pastel-blue to-blue-100 text-black rounded-lg hover:shadow-glow-blue transition-shadow">
-              <h3 className="text-2xl font-bold mb-2">8 Sessions</h3>
-              <p className="text-3xl font-bold mb-2">€260</p>
-              <p className="opacity-70">Save €60</p>
+            <div>
+              <h3 className="font-bold mb-2">Group Size</h3>
+              <p className="opacity-90">4-8 participants maximum</p>
             </div>
-            <div className="p-6 bg-black text-white dark:bg-white dark:text-black rounded-lg hover:shadow-glow-blue transition-shadow">
-              <h3 className="text-2xl font-bold mb-2">12 Sessions</h3>
-              <p className="text-3xl font-bold mb-2">€360</p>
-              <p className="opacity-70">Save €120</p>
+            <div>
+              <h3 className="font-bold mb-2">Price</h3>
+              <p className="opacity-90">€40 per session</p>
             </div>
+          </div>
+          
+          <div className="border-t border-cream opacity-50 pt-6">
+            <h3 className="font-bold mb-4">Session Packages - Save More</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white text-navy p-4 rounded">
+                <p className="text-2xl font-bold">4 Sessions</p>
+                <p className="text-3xl font-bold my-2">€140</p>
+                <p className="text-sm opacity-70">Save €20</p>
+              </div>
+              <div className="bg-white text-navy p-4 rounded">
+                <p className="text-2xl font-bold">8 Sessions</p>
+                <p className="text-3xl font-bold my-2">€260</p>
+                <p className="text-sm opacity-70">Save €60</p>
+              </div>
+              <div className="bg-cream text-navy p-4 rounded">
+                <p className="text-2xl font-bold">12 Sessions</p>
+                <p className="text-3xl font-bold my-2">€360</p>
+                <p className="text-sm opacity-70">Save €120</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/booking"
+              className="inline-flex items-center gap-2 bg-cream text-navy px-8 py-4 text-lg font-medium hover:opacity-90 transition-opacity rounded"
+            >
+              Book a Session
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </div>
@@ -75,33 +86,25 @@ export default function SessionsPage() {
   );
 }
 
-const sessions = [
+const programs = [
   {
-    title: "Group Art Therapy",
-    description: "Collaborative art-making in a supportive group environment. Learn DBT skills through creative expression.",
-    duration: "2 hours",
-    groupSize: "6-10 people",
-    price: "€40",
+    title: "Venture to Create",
+    subtitle: "An open studio session.",
+    description: "The art materials are yours to express your creativity.",
   },
   {
-    title: "Collage Workshop",
-    description: "Express your inner world through mixed media collage. Perfect for exploring emotions and self-discovery.",
-    duration: "2 hours",
-    groupSize: "6-10 people",
-    price: "€40",
+    title: "Nourishing Skills",
+    subtitle: "An arts-based DBT group.",
+    description: "Develop practical dialectical behavior therapy skills through creative expression and group support.",
   },
   {
-    title: "Open Studio Time",
-    description: "Self-directed creative time with access to professional materials and optional guidance.",
-    duration: "3 hours",
-    groupSize: "4-8 people",
-    price: "€35",
+    title: "Gather",
+    subtitle: "Collage making.",
+    description: "Browse through images, meditatively cut, assemble and stick to make a collage.",
   },
   {
-    title: "Guided Art Adventures",
-    description: "Journey through Irish mythology with guided creative exercises and storytelling.",
-    duration: "2.5 hours",
-    groupSize: "6-12 people",
-    price: "€45",
+    title: "Harvest",
+    subtitle: "A structured art activity.",
+    description: "In this session an art activity is provided. You select your preferred colour palette and art materials to interpret the activity to your liking. The level of support in this venture is given at your discretion.",
   },
 ];

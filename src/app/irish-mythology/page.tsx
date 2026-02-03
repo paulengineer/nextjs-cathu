@@ -1,6 +1,6 @@
 export default function IrishMythologyPage() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4">
+    <div className="min-h-screen pt-24 pb-16 px-4 bg-cream">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold mb-4">Irish Mythology</h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 mb-16">
@@ -65,8 +65,8 @@ export default function IrishMythologyPage() {
 
           <div className="border-l-4 border-pastel-blue pl-6 my-12 bg-gradient-blue p-6 rounded-lg">
             <p className="text-2xl font-medium italic text-black">
-              "In the old stories, we find mirrors for our own journeys — 
-              tales of struggle, transformation, and ultimately, healing."
+              &quot;In the old stories, we find mirrors for our own journeys — 
+              tales of struggle, transformation, and ultimately, healing.&quot;
             </p>
           </div>
         </div>

@@ -81,7 +81,7 @@ Status: ✅ COMPLETE & PRODUCTION-READY
 ### ✅ Footer Elements
 - [x] Studio name & description
 - [x] Opening hours (with seasonal note)
-- [x] Location: Galway, Ireland
+- [x] Location: Waterford, Ireland
 - [x] Contact: hello@cothustudio.ie
 - [x] Quick navigation links (6 pages)
 - [x] Privacy & security messaging

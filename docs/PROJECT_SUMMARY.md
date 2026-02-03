@@ -55,7 +55,7 @@ src/
 ### 📍 Footer
 - ✅ Branding & description
 - ✅ Opening hours (weekday, weekend, by appointment)
-- ✅ Location (Galway, Ireland)
+- ✅ Location (Waterford, Ireland)
 - ✅ Contact email (hello@cothustudio.ie)
 - ✅ Quick links to all pages
 - ✅ Privacy/security messaging
@@ -128,7 +128,7 @@ Then visit [http://localhost:3000](http://localhost:3000)! 🎉
 Edit `src/components/footer.tsx`:
 ```typescript
 email: "hello@cothustudio.ie"
-location: "Galway, Ireland"
+location: "Waterford, Ireland"
 hours: { ... }
 ```
 
@@ -254,4 +254,4 @@ Questions? Check the documentation files or reach out to Cal.com support.
 **Built with ❤️ for Cothú Studio**
 *Non-clinical DBT skills through group art, collage, open studio time, and guided art adventures.*
 
-Galway, Ireland 🇮🇪
+Waterford, Ireland 🇮🇪

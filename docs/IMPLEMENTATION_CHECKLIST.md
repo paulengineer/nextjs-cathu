@@ -46,7 +46,7 @@ const eventTypes = {
 ### `src/components/footer.tsx`
 - [ ] Update email: `hello@cothustudio.ie` → your email
 - [ ] Update phone/contact (add if needed)
-- [ ] Verify location: "Galway, Ireland"
+- [ ] Verify location: "Waterford, Ireland"
 - [ ] Update opening hours if different
 
 ## 4. Replace Placeholder Images
@@ -143,7 +143,7 @@ npm run dev
 Edit `src/app/layout.tsx`:
 ```typescript
 export const metadata: Metadata = {
-  title: "Cothú Studio | Art Therapy & DBT Skills in Galway",
+  title: "Cothú Studio | Art Therapy & DBT Skills in Waterford",
   description: "Professional art therapy studio...",
 };
 ```

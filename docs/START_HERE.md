@@ -37,7 +37,7 @@
 
 🏢 Professional Footer
   ✓ Business hours (with seasonal note)
-  ✓ Location: Galway, Ireland
+  ✓ Location: Waterford, Ireland
   ✓ Contact email
   ✓ Quick navigation links
   ✓ Privacy/security messaging
@@ -190,7 +190,7 @@ Navigation
 Footer
   ✓ Studio branding
   ✓ Opening hours with seasonal note
-  ✓ Location: Galway, Ireland
+  ✓ Location: Waterford, Ireland
   ✓ Contact: hello@cothustudio.ie
   ✓ Quick navigation links
   ✓ Privacy/terms links
@@ -220,7 +220,7 @@ Just 3 things:
 
 2. Contact Information
    → Update footer with your email
-   → Already has: Galway location, default hours
+   → Already has: Waterford location, default hours
 
 3. Images (Optional)
    → Replace Unsplash placeholders with your photos
@@ -332,7 +332,7 @@ THIS WEEK:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Built with ❤️ for Cothú Studio
-Art Therapy | Non-clinical DBT Skills | Galway, Ireland 🇮🇪
+Art Therapy | Non-clinical DBT Skills | Waterford, Ireland 🇮🇪
 
 Welcome to production-ready beautiful design! ✨
 

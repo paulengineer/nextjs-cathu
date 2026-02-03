@@ -1,150 +1,114 @@
 "use client";
 
-import { Cal } from "@calcom/embed-react";
 import { useState } from "react";
 
 export default function ArtTherapyBooking() {
   const [bookingType, setBookingType] = useState("group-session");
-
-  const eventTypes = {
-    "group-session": "your-username/group-session",
-    "individual-60min": "your-username/individual-60min",
-    "individual-90min": "your-username/individual-90min",
-    "open-studio": "your-username/open-studio",
-  };
 
   const bookingInfo = {
     "group-session": {
       title: "Group Art Therapy Session",
       description: "Join our collaborative art sessions with DBT skill integration",
       price: "€40",
-      duration: "2 hours",
+      duration: "120 minutes",
     },
     "individual-60min": {
-      title: "Individual Session - 60 Minutes",
-      description: "Personalized one-on-one art therapy experience",
-      price: "€70",
-      duration: "1 hour",
+      title: "Individual Session (60 min)",
+      description: "One-on-one personalized art therapy guidance",
+      price: "€60",
+      duration: "60 minutes",
     },
     "individual-90min": {
-      title: "Individual Session - 90 Minutes",
-      description: "Extended creative time for deeper exploration",
-      price: "€95",
-      duration: "1.5 hours",
+      title: "Individual Session (90 min)",
+      description: "Extended one-on-one session for deeper exploration",
+      price: "€85",
+      duration: "90 minutes",
     },
     "open-studio": {
       title: "Open Studio Time",
-      description: "Self-directed creative time with materials and optional guidance",
-      price: "€35",
-      duration: "3 hours",
+      description: "Self-guided creative time with materials available",
+      price: "€25",
+      duration: "180 minutes",
     },
   };
 
-  const current = bookingInfo[bookingType as keyof typeof bookingInfo];
+  const currentBooking = bookingInfo[bookingType as keyof typeof bookingInfo];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <div className="mb-12">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">Book Your Session</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
-          Choose the session type that best fits your needs
-        </p>
-      </div>
-
+    <div className="space-y-8">
       {/* Session Type Selector */}
-      <div className="mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {Object.entries(bookingInfo).map(([key, info]) => (
-          <button
-            key={key}
-            onClick={() => setBookingType(key)}
-            className={`p-4 border-2 text-left transition-all ${
-              bookingType === key
-                ? "border-black dark:border-white bg-black dark:bg-white text-white dark:text-black"
-                : "border-gray-300 dark:border-gray-700 hover:border-black dark:hover:border-white"
-            }`}
-          >
-            <h3 className="font-bold mb-2">{info.title}</h3>
-            <div className="flex justify-between items-end">
-              <div>
-                <p className="text-sm opacity-70">{info.duration}</p>
-                <p className="font-bold text-lg">{info.price}</p>
-              </div>
-            </div>
-          </button>
-        ))}
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Select Your Session</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {Object.entries(bookingInfo).map(([key, info]) => (
+            <button
+              key={key}
+              onClick={() => setBookingType(key)}
+              className={`p-4 rounded-lg border-2 transition-all text-left group ${
+                bookingType === key
+                  ? "border-pastel-pink bg-gradient-pink"
+                  : "border-pastel-mint hover:border-pastel-pink"
+              }`}
+            >
+              <h3 className="font-bold mb-1">{info.title}</h3>
+              <p className="text-sm opacity-70">{info.description}</p>
+              <p className="text-sm mt-2 font-medium">{info.price} • {info.duration}</p>
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-12">
-        {/* Session Info */}
-        <div className="md:col-span-1">
-          <div className="border-2 border-black dark:border-white p-8 h-full">
-            <h2 className="text-2xl font-bold mb-4">{current.title}</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              {current.description}
-            </p>
-
-            <div className="space-y-4 mb-8">
-              <div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Duration</p>
-                <p className="text-xl font-bold">{current.duration}</p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Price per session</p>
-                <p className="text-3xl font-bold">{current.price}</p>
-              </div>
+      {/* Booking Details */}
+      <div className="bg-gradient-to-br from-pastel-blue to-blue-50 dark:from-pastel-blue dark:to-blue-900 p-6 rounded-lg border border-pastel-blue">
+        <div className="text-black dark:text-white">
+          <h3 className="text-xl font-bold mb-2">{currentBooking.title}</h3>
+          <p className="mb-4">{currentBooking.description}</p>
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-sm opacity-70">Duration</p>
+              <p className="font-bold">{currentBooking.duration}</p>
             </div>
-
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start gap-2">
-                <span className="text-black dark:text-white">✓</span>
-                <span>All materials included</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-black dark:text-white">✓</span>
-                <span>Flexible rescheduling</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-black dark:text-white">✓</span>
-                <span>Secure online booking</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="text-black dark:text-white">✓</span>
-                <span>Privacy-respecting</span>
-              </div>
+            <div>
+              <p className="text-sm opacity-70">Price</p>
+              <p className="font-bold text-2xl">{currentBooking.price}</p>
             </div>
-          </div>
-        </div>
-
-        {/* Cal.com Embed */}
-        <div className="md:col-span-2">
-          <div className="border-2 border-black dark:border-white p-4 bg-white dark:bg-black rounded-lg">
-            <Cal
-              calLink={eventTypes[bookingType as keyof typeof eventTypes]}
-              style={{
-                width: "100%",
-                height: "600px",
-              }}
-              config={{
-                theme: "light",
-                hideEventTypeDetails: false,
-                layout: "week_view",
-              }}
-            />
           </div>
         </div>
       </div>
 
-      {/* Trust & Security */}
-      <div className="bg-black dark:bg-white text-white dark:text-black p-8 rounded-lg">
-        <h3 className="text-2xl font-bold mb-4">Your Privacy & Security Matter</h3>
-        <p className="mb-4">
-          🔒 We use secure online booking with privacy-respecting policies. Your confidentiality 
-          and wellbeing are our top priorities. All personal information is handled with care and never 
-          shared with third parties.
+      {/* Cal.com Embed Placeholder */}
+      <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600">
+        <p className="text-center text-gray-600 dark:text-gray-400">
+          <span className="block font-bold mb-2">📅 Calendar Booking</span>
+          To enable online booking, integrate your Cal.com calendar by setting up a paid account at{" "}
+          <a href="https://cal.com" target="_blank" rel="noopener noreferrer" className="text-pastel-blue hover:underline">
+            cal.com
+          </a>
+          {" "}and update the booking configuration.
         </p>
-        <p className="text-sm opacity-75">
-          Questions? Reach out to us at hello@cothustudio.ie for personalized support in choosing the right session for you.
-        </p>
+      </div>
+
+      {/* What's Included */}
+      <div className="bg-gradient-mint p-6 rounded-lg border border-pastel-mint text-black dark:text-white">
+        <h3 className="font-bold text-lg mb-3">What&apos;s Included</h3>
+        <ul className="space-y-2 text-sm">
+          <li className="flex gap-2">
+            <span className="text-pastel-pink">✓</span>
+            <span>Professional art materials and supplies</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="text-pastel-pink">✓</span>
+            <span>Guided art instruction and DBT skill integration</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="text-pastel-pink">✓</span>
+            <span>Supportive, judgement-free creative space</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="text-pastel-pink">✓</span>
+            <span>Take home your artwork</span>
+          </li>
+        </ul>
       </div>
     </div>
   );

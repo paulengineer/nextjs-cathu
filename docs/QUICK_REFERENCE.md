@@ -141,7 +141,7 @@ npm run lint       # Check code quality
 REPLACE ALL INSTANCES OF:
 "your-username"       → Your Cal.com username
 "hello@cothustudio.ie" → Your email
-"Galway, Ireland"     → Your location
+"Waterford, Ireland"     → Your location
 https://images.unsplash.com/... → Your images
 ```
 

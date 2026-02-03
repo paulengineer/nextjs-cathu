@@ -1,136 +1,204 @@
 import Link from "next/link";
+import { ArrowRight } from "@/components/icons";
 
-export default function IndividualPage() {
+export default function ArtTherapyPage() {
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">Individual Sessions</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 mb-16">
-          Personalized one-on-one art therapy experiences
+    <div className="min-h-screen pt-24 pb-16 px-4 bg-cream">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 text-navy">Art Therapy</h1>
+        <p className="text-xl text-navy opacity-80 mb-16">
+          Individual sessions tailored to your personal journey
         </p>
 
-        <div className="space-y-12">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Private Art Therapy</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-              Work one-on-one with our experienced facilitators to explore your 
-              personal creative journey. Individual sessions offer personalized 
-              attention and the opportunity to work at your own pace.
+        {/* What is Art Therapy */}
+        <div className="mb-16 bg-white p-8 rounded-lg border-2 border-navy">
+          <h2 className="text-3xl font-bold mb-6 text-navy">What is Art Therapy?</h2>
+          <div className="space-y-4 text-navy">
+            <p className="text-lg leading-relaxed">
+              Art therapy is a form of expressive therapy that uses creative processes to improve mental, emotional, and physical well-being. At Cothú Studio, we integrate non-clinical DBT (Dialectical Behavior Therapy) skills with artistic expression to help you develop emotional regulation, mindfulness, distress tolerance, and interpersonal effectiveness.
             </p>
+            <p className="text-lg leading-relaxed">
+              No artistic experience is required. The focus is on the process of creation, not the final product. Through guided art-making, you&apos;ll explore your thoughts and feelings in a safe, supportive environment.
+            </p>
+          </div>
+        </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="border-2 border-pastel-pink p-6 hover-glow-pink hover:border-pastel-pink transition-all group relative overflow-hidden rounded-lg">
-                {/* Soft pink gradient background on hover */}
-                <div className="absolute inset-0 bg-gradient-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-4">60-Minute Session</h3>
-                  <p className="text-4xl font-bold mb-4 text-pastel-pink">€70</p>
-                  <ul className="space-y-2 mb-6 text-gray-600 dark:text-gray-400">
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>Personalized guidance</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>All materials included</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>DBT skill integration</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>Flexible scheduling</span>
-                    </li>
-                  </ul>
-                  <Link
-                    href="/booking"
-                    className="block w-full text-center py-3 bg-gradient-pink text-black font-medium hover:shadow-glow-pink transition-all rounded"
-                  >
-                    Book 60-Min Session
-                  </Link>
+        {/* Individual Session Options */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-navy">Individual Sessions</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {sessions.map((session, index) => (
+              <div
+                key={index}
+                className="border-2 border-navy p-8 bg-white hover:bg-navy hover:text-cream transition-all group"
+              >
+                <h3 className="text-2xl font-bold mb-4">{session.title}</h3>
+                <p className="text-lg mb-6 opacity-80">{session.description}</p>
+                
+                <div className="space-y-3 mb-6">
+                  <div className="flex justify-between items-center pb-2 border-b border-current opacity-50">
+                    <span className="font-medium">Duration</span>
+                    <span>{session.duration}</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-2 border-b border-current opacity-50">
+                    <span className="font-medium">Format</span>
+                    <span>{session.format}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Investment</span>
+                    <span className="text-2xl font-bold">{session.price}</span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="border-2 border-pastel-pink p-6 hover-glow-pink hover:border-pastel-pink transition-all group relative overflow-hidden rounded-lg">
-                {/* Soft pink gradient background on hover */}
-                <div className="absolute inset-0 bg-gradient-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-4">90-Minute Session</h3>
-                  <p className="text-4xl font-bold mb-4 text-pastel-pink">€95</p>
-                  <ul className="space-y-2 mb-6 text-gray-600 dark:text-gray-400">
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>Extended creative time</span>
+                <ul className="space-y-2 mb-6">
+                  {session.includes.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="font-bold">✓</span>
+                      <span className="opacity-80">{item}</span>
                     </li>
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>Deep exploration</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>All materials included</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-pastel-pink">✓</span>
-                      <span>Most popular option</span>
-                    </li>
-                  </ul>
-                  <Link
-                    href="/booking"
-                    className="block w-full text-center py-3 bg-gradient-pink text-black font-medium hover:shadow-glow-pink transition-all rounded"
-                  >
-                    Book 90-Min Session
-                  </Link>
-                </div>
+                  ))}
+                </ul>
+
+                <Link
+                  href="/booking"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3 border-2 border-current font-medium hover:opacity-70 transition-opacity rounded"
+                >
+                  Book This Session
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* What to Expect */}
+        <div className="mb-16 bg-navy text-cream p-8 rounded-lg">
+          <h2 className="text-3xl font-bold mb-6">What to Expect</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-3">Your First Session</h3>
+              <ul className="space-y-2 opacity-90">
+                <li>• Initial conversation about your goals and interests</li>
+                <li>• Introduction to art materials and techniques</li>
+                <li>• Gentle exploration through a guided art activity</li>
+                <li>• Discussion and reflection on your experience</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-3">Ongoing Sessions</h3>
+              <ul className="space-y-2 opacity-90">
+                <li>• Personalized art activities based on your needs</li>
+                <li>• Integration of DBT skills and coping strategies</li>
+                <li>• Supportive, non-judgmental guidance</li>
+                <li>• Flexible pacing that honors your process</li>
+              </ul>
             </div>
           </div>
+        </div>
 
-          <div className="border-t-2 border-pastel-pink pt-12">
-            <h2 className="text-3xl font-bold mb-6">Individual Session Packages</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 border-2 border-pastel-pink rounded-lg hover:shadow-glow-pink transition-shadow">
-                <h3 className="text-xl font-bold mb-2">4 Sessions</h3>
-                <p className="text-3xl font-bold mb-2 text-pastel-pink">€260</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">60-minute sessions</p>
-                <p className="text-sm font-medium mt-2">Save €20</p>
+        {/* Session Packages */}
+        <div className="bg-white p-8 rounded-lg border-2 border-navy">
+          <h2 className="text-3xl font-bold mb-4 text-navy">Session Packages</h2>
+          <p className="text-lg text-navy mb-6 opacity-80">
+            Commit to your wellbeing journey with discounted session packages
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {packages.map((pkg, index) => (
+              <div
+                key={index}
+                className={`p-6 rounded-lg border-2 ${
+                  pkg.popular
+                    ? "bg-navy text-cream border-navy"
+                    : "bg-cream text-navy border-navy"
+                }`}
+              >
+                {pkg.popular && (
+                  <span className="inline-block px-3 py-1 bg-cream text-navy text-sm font-bold rounded mb-4">
+                    Most Popular
+                  </span>
+                )}
+                <h3 className="text-2xl font-bold mb-2">{pkg.sessions}</h3>
+                <p className="text-4xl font-bold mb-2">{pkg.price}</p>
+                <p className="opacity-70">{pkg.savings}</p>
               </div>
-              <div className="p-6 border-2 border-pastel-pink rounded-lg hover:shadow-glow-pink transition-shadow">
-                <h3 className="text-xl font-bold mb-2">4 Sessions</h3>
-                <p className="text-3xl font-bold mb-2 text-pastel-pink">€350</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">90-minute sessions</p>
-                <p className="text-sm font-medium mt-2">Save €30</p>
-              </div>
-              <div className="p-6 bg-gradient-pink text-black rounded-lg hover:shadow-glow-pink transition-shadow">
-                <h3 className="text-xl font-bold mb-2">8 Sessions</h3>
-                <p className="text-3xl font-bold mb-2">€680</p>
-                <p className="text-sm opacity-70">90-minute sessions</p>
-                <p className="text-sm font-medium mt-2">Save €80</p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="bg-black dark:bg-white text-white dark:text-black p-8 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">What to Expect</h2>
-            <ul className="space-y-3 text-lg">
-              {[
-                "Initial consultation to understand your goals",
-                "Personalized creative exercises and projects",
-                "Integration of DBT skills relevant to your journey",
-                "All art materials and supplies provided",
-                "Supportive, non-judgmental environment",
-                "No previous art experience necessary"
-              ].map((item, idx) => (
-                <li key={idx} className="flex gap-3">
-                  <span className="text-pastel-pink">→</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-8 text-center">
+            <Link
+              href="/booking"
+              className="inline-flex items-center gap-2 bg-navy text-cream px-8 py-4 text-lg font-medium hover:opacity-90 transition-opacity rounded"
+            >
+              Schedule Your Session
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
+        </div>
+
+        {/* Contact CTA */}
+        <div className="mt-16 text-center">
+          <h2 className="text-2xl font-bold mb-4 text-navy">Have Questions?</h2>
+          <p className="text-lg text-navy opacity-80 mb-6">
+            Reach out to discuss which session format is right for you
+          </p>
+          <a
+            href="mailto:hello@cothustudio.ie"
+            className="inline-flex items-center gap-2 text-navy border-b-2 border-navy pb-1 hover:opacity-70 transition-opacity text-lg"
+          >
+            hello@cothustudio.ie
+          </a>
         </div>
       </div>
     </div>
   );
 }
+
+const sessions = [
+  {
+    title: "60-Minute Session",
+    description: "Perfect for focused work on specific goals or for those with limited time.",
+    duration: "60 minutes",
+    format: "One-on-one",
+    price: "€70",
+    includes: [
+      "Personalized art therapy guidance",
+      "All art materials provided",
+      "Integration of DBT skills",
+      "Supportive, confidential environment",
+    ],
+  },
+  {
+    title: "90-Minute Session",
+    description: "Extended time for deeper exploration and more complex art projects.",
+    duration: "90 minutes",
+    format: "One-on-one",
+    price: "€95",
+    includes: [
+      "Extended creative exploration time",
+      "All premium art materials provided",
+      "DBT skills integration and practice",
+      "Personalized take-home strategies",
+    ],
+  },
+];
+
+const packages = [
+  {
+    sessions: "4 Sessions",
+    price: "€250",
+    savings: "Save €30",
+    popular: false,
+  },
+  {
+    sessions: "8 Sessions",
+    price: "€480",
+    savings: "Save €80",
+    popular: true,
+  },
+  {
+    sessions: "12 Sessions",
+    price: "€690",
+    savings: "Save €150",
+    popular: false,
+  },
+];

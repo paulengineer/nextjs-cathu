@@ -54,10 +54,10 @@ STEP 1: Install Node.js (if you don't have it)
         Download: https://nodejs.org/
 
 STEP 2: Install dependencies
-        $ npm install
+        $ pnpm install
 
 STEP 3: Start development server
-        $ npm run dev
+        $ pnpm run dev
         
         Open: http://localhost:3000
 
@@ -68,7 +68,7 @@ STEP 4: Add your Cal.com username to 2 files
         Replace "your-username" with your actual Cal.com username
 
 STEP 5: Deploy!
-        Build: npm run build
+        Build: pnpm run build
         Then deploy to Vercel (or Railway/Netlify)
 
 That's it! You're live! 🚀
@@ -136,9 +136,9 @@ TODAY (1-2 hours to live):
 ├─ Sign up Cal.com (5 min)
 ├─ Create 4 events in Cal.com (10 min)
 ├─ Get Cal.com username (1 min)
-├─ npm install (2-3 min)
+├─ pnpm install (2-3 min)
 ├─ Update code (2 files, 2 min)
-├─ npm run dev (30 sec)
+├─ pnpm run dev (30 sec)
 ├─ Test locally (5 min)
 └─ Deploy to Vercel (5 min)
 
@@ -205,7 +205,7 @@ Styling:       Tailwind CSS
 Dark Mode:     next-themes
 Booking:       @calcom/embed-react
 Animations:    Intersection Observer API
-Build:         npm scripts
+Build:         pnpm scripts
 
 
 DEPLOYMENT CHECKLIST
@@ -216,13 +216,13 @@ Before deploying:
 ☐ 4 events set up
 ☐ Cal.com username in 2 files
 ☐ Footer email correct
-☐ npm install successful
-☐ npm run dev works
+☐ pnpm install successful
+☐ pnpm run dev works
 ☐ All pages accessible
 ☐ Dark mode toggle works
 ☐ Booking page displays
 ☐ Mobile looks good
-☐ npm run build succeeds
+☐ pnpm run build succeeds
 
 Deploy to:
 ☐ Vercel (recommended)
@@ -274,8 +274,8 @@ SUCCESS INDICATORS
 ═══════════════════════════════════════════════════════════════════════════════════
 
 You're on track when:
-✅ npm install completes without errors
-✅ npm run dev shows "ready - started server"
+✅ pnpm install completes without errors
+✅ pnpm run dev shows "ready - started server"
 ✅ Browser loads http://localhost:3000
 ✅ You see the Cothú home page
 ✅ Dark mode toggle appears (top-right)
@@ -286,7 +286,7 @@ You're ready to deploy when:
 ✅ All of the above work
 ✅ Cal.com username is updated
 ✅ Footer shows correct info
-✅ npm run build succeeds
+✅ pnpm run build succeeds
 ✅ Mobile responsive looks good
 ✅ You've tested everything locally
 
@@ -294,11 +294,11 @@ You're ready to deploy when:
 QUICK COMMANDS
 ═══════════════════════════════════════════════════════════════════════════════════
 
-npm install                    # Install dependencies
-npm run dev                    # Start development server
-npm run build                  # Build for production  
-npm start                      # Start production server
-npm run lint                   # Check code quality
+pnpm install                    # Install dependencies
+pnpm run dev                    # Start development server
+pnpm run build                  # Build for production  
+pnpm start                      # Start production server
+pnpm run lint                   # Check code quality
 vercel                         # Deploy to Vercel
 
 
@@ -362,9 +362,9 @@ FINAL STEPS TO LAUNCH
 2. TODAY
    ➜ Sign up for Cal.com (app.cal.com/signup)
    ➜ Create 4 booking events
-   ➜ Run npm install
+   ➜ Run pnpm install
    ➜ Update Cal.com username (2 files)
-   ➜ Run npm run dev
+   ➜ Run pnpm run dev
    ➜ Test at localhost:3000
 
 3. THIS WEEK
@@ -390,6 +390,6 @@ Questions? Read the docs. They have all the answers.
 ═══════════════════════════════════════════════════════════════════════════════════
 
 Built with ❤️ for Cothú Studio
-Art Therapy | Non-clinical DBT Skills | Galway, Ireland 🇮🇪
+Art Therapy | Non-clinical DBT Skills | Waterford, Ireland 🇮🇪
 
 Your website is ready. Now go change the world with art therapy! 🎨
